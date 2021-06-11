@@ -6,3 +6,8 @@ const flightSchema = new mongoose.Schema({
     flightNo: Number, 
     departs: Date
 })
+
+const Flight = mongoose.model('Flight', flightSchema);
+
+console.log(Flight);
+module.exports = Flight;
