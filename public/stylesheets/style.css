@@ -1,8 +1,36 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+  background-color: floralwhite;
+}
+
+.mainNav {
+  font-size: 40px;
+  display: inline;
+}
+
+.smallNav {
+  display: inline;
+  margin: 50px;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 10px;
+}
+
+#newFlight {
+  margin-left: 700px;
+  margin-right: auto;
+  text-align: left;
 }
 
 a {
   color: #00B7FF;
+}
+
+a:hover {
+  color:rgb(28, 28, 184);
 }
