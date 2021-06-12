@@ -59,10 +59,16 @@ table {
 
 #details-page {
   order: 4;
+  text-align: left;
 }
 
 .details {
   color: #057ead;
+}
+
+#destinations-page {
+  order: 5;
+  width:100%;
 }
 
 a {

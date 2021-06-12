@@ -30,10 +30,10 @@ const Flight = mongoose.model('Flight', flightSchema);
 console.log(Flight);
 module.exports = Flight;
 
-function getDateYear() {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = today.getMonth();
-    const day = today.getDate();
-    return new Date(year +1, month, day);
-}
+// // function getDateYear() {
+// //     const today = new Date();
+// //     const year = today.getFullYear();
+// //     const month = today.getMonth();
+// //     const day = today.getDate();
+// //     return new Date(year +1, month, day);
+// }

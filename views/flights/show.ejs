@@ -21,7 +21,41 @@
             <div><span class="details"><b>Airport:</b></span> <%= flight.airport %></div>
             <div><span class="details"><b>Flight #:</b></span> <%= flight.flightNo %></div>
             <div><span class="details"><b>Departs:</b></span> <%= flight.departs %></div>
-          </section>
+            <div><span class="details"><b>Destinations:</b></span> 
+                <table id="dest-list">
+                    <thead>
+                        <tr>
+                            <th><span class="details"><b>Airport</b></span></th>
+                            <th><span class="details"><b>Arrival</b></span></th>
+                        </tr>
+                    </thead>
+                    <tbody><% flight.destinations.forEach(function(d) { %>
+                        <tr>
+                            <td><%= d.airport %> </td>
+                            <td><%= d.arrival %> </td>
+                        </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="destinations-page">
+        <br><br><h2>Destinations</h2>
+        <form id="add-destination-form" method="POST"
+        action="/flights/<%=flight._id%>/destinations">
+            <label><span class="details"><b>Airport:</b></span></label>
+            <select name="airport">
+                <option value="AUS">AUS</option>
+                <option value="DFW">DFW</option>
+                <option value="DEN">DEN</option>
+                <option value="LAX">LAX</option>
+                <option value="SAN">SAN</option>
+            </select>
+            <label><span class="details"><b>Arrival:</b></span></label>
+            <input type="datetime-local" name="arrival" min="2022-06-11T00:00">
+            <input type="submit" value="Add">
+        </form>
+        </section>
     </main>
 </body>
 </html>

@@ -18,12 +18,10 @@ function newFlight(req, res) {
 }
 
 function index(req, res) {
-    Flight.find({}, function(err, allFlightDocuments){
-        console.log(allFlightDocuments);
-        res.render('flights/index', {
-            flights: allFlightDocuments
-        })
-    })
+    Flight.find({}, function(err, flights){
+        console.log(flights);
+        res.render('flights/index', { title: 'All Flights', flights });
+    });
 }
 
 function create(req, res) {
@@ -34,11 +32,11 @@ function create(req, res) {
         req.body.departs = year;
     }
 
-    Flight.create(req.body, function(err, flightDocument) {
+    Flight.create(req.body, function(err, flight) {
         console.log(err);
         
         if (err) return res.render('flights/new');
-        console.log(flightDocument, " < This is the document I created");
+        console.log(flight, " < This is the document I created");
         res.redirect('/flights');
     })
 }
