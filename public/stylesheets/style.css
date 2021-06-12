@@ -57,6 +57,14 @@ table {
   width: 100%;
 }
 
+#details-page {
+  order: 4;
+}
+
+.details {
+  color: #057ead;
+}
+
 a {
   color: #057ead;
 }
