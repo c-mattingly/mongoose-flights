@@ -20,8 +20,16 @@ function index(req, res) {
 }
 
 function create(req, res) {
+    
+    if(req.body.departs == ''){
+        let newDate =  new Date();
+        let year = newDate.setFullYear(newDate.getFullYear() + 1);
+        req.body.departs = year;
+    }
+
     Flight.create(req.body, function(err, flightDocument) {
         console.log(err);
+        
         if (err) return res.render('flights/new');
         console.log(flightDocument, " < This is the document I created");
         res.redirect('/flights');

@@ -1,10 +1,23 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   text-align: center;
   background-color: floralwhite;
+  height: 100%;
 }
 
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: auto;
+}
+
+h1 {
+  order: 1;
+  width: 100%;
+
+}
 .mainNav {
   font-size: 40px;
   display: inline;
@@ -12,23 +25,40 @@ body {
 
 .smallNav {
   display: inline;
-  margin: 50px;
+  margin-top: 10px;
+  margin-right: 5px;
+
+
 }
 
+header {
+  display: flex;
+  background-color: lightblue;
+  margin-top: -8px;
+  margin-left: -8px;
+  margin-right: -8px;
+  height: 30px;
+  justify-content: flex-end;
+}
+
+
 table {
-  margin-left: auto;
-  margin-right: auto;
+  order: 3;
+  text-align: center;
+  margin: auto;
   border-spacing: 10px;
 }
 
 #newFlight {
-  margin-left: 700px;
+  order: 2;
+  margin-left: auto;
   margin-right: auto;
-  text-align: left;
+  justify-content: flex-start;
+  width: 100%;
 }
 
 a {
-  color: #00B7FF;
+  color: #057ead;
 }
 
 a:hover {
