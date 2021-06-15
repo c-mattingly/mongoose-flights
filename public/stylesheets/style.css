@@ -23,6 +23,10 @@ h1 {
   display: inline;
 }
 
+h3 {
+  text-align: center;
+}
+
 .smallNav {
   display: inline;
   margin-top: 10px;

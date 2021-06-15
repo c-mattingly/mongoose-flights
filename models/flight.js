@@ -20,7 +20,8 @@ const flightSchema = new mongoose.Schema({
             return getDateYear();
         }
     },
-    destinations: [destinationSchema], 
+    destinations: [destinationSchema],
+    tickets: [{type: Schema.Types.ObjectId, ref: 'Ticket'}],
 }, {
     timestamps: true
 });
@@ -29,11 +30,3 @@ const Flight = mongoose.model('Flight', flightSchema);
 
 console.log(Flight);
 module.exports = Flight;
-
-// // function getDateYear() {
-// //     const today = new Date();
-// //     const year = today.getFullYear();
-// //     const month = today.getMonth();
-// //     const day = today.getDate();
-// //     return new Date(year +1, month, day);
-// }
