@@ -9,12 +9,17 @@ module.exports = {
 }
 
 function show(req, res) {
-    Flight.findById(req.params.id, function(err, flight) {
-        Ticket.find({flight: flight._id}, function(err, tickets) {
-            
-        })
-        res.render('flights/show', { title: "Flight Detail", flight});
-    });
+    Flight.findById(req.params.id, function (err, flightDoc){
+        Ticket.find(
+            {flight: flightDoc._id},
+            function(err, ticketsDocs){
+                res.render('flights/show', {
+                    title: 'Flight Detail',
+                    flight: flightDoc,
+                    tickets: ticketsDocs });
+            }
+        )
+});
 }
 
 function newFlight(req, res) {
@@ -40,7 +45,6 @@ function create(req, res) {
         console.log(err);
         
         if (err) return res.render('flights/new');
-        console.log(flight, " < This is the document I created");
         res.redirect('/flights');
     })
 }

@@ -25,6 +25,7 @@ h1 {
 
 h3 {
   text-align: center;
+  margin-bottom: -10px;
 }
 
 .smallNav {
@@ -73,6 +74,15 @@ table {
 #destinations-page {
   order: 5;
   width:100%;
+}
+
+#add-ticket-button {
+  margin-left: 400px;
+}
+
+#add-ticket {
+  margin-left: 340px;
+ 
 }
 
 a {

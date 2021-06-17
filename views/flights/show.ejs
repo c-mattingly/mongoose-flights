@@ -23,6 +23,7 @@
             <div><span class="details"><b>Departs:</b></span> <%= flight.departs %></div>
             <br>
             <div><h3>Destinations</h3></span> 
+            <br>
                 <table id="dest-list">
                     <thead>
                         <tr>
@@ -39,22 +40,23 @@
                     </tbody>
                 </table>
             </div><br><br>
-            <div><h3>Tickets</h3><button href="../tickets/new">Add</a></button>
+            <div><h3>Tickets</h3>
+                <a href="/flights/<%= flight._id %>/tickets/new"><button id="add-ticket">Add</button></a>
                 <table id="ticket-list">
                     <thead>
                         <tr>
                             <th><span class="details"><b>Seat</b></span></th>
                             <th><span class="details"><b>Price</b></span></th>
-                            <th><span class="details"><b>Flight</b></span></th>
                         </tr>
                     </thead>
-                    <tbody><% flight.tickets.forEach(function(t) { %>
-                        <tr>
-                            <td><%= t.seat %> </td>
-                            <td><%= t.price %> </td>
-                            <td><%= t.flight %> </td>
-                        </tr>
-                        <% }); %>
+                    <tbody><% tickets.forEach(t => { %>
+                        <% if (t.flight = flight._id) { %>
+                            <tr>
+                                <td><%= t.seat %></td>
+                                <td>$<%= t.price %></td>
+                            </tr>
+                        <% } %>
+                    <% }); %>   
                     </tbody>
                 </table>
             </div>

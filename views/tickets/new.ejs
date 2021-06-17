@@ -15,13 +15,11 @@
         </nav>
     </header>
     <h1>Add Ticket</h1>
-<form id="add-ticket-form" action="/tickets" method="POST">
-    <label>Seat:</label>
-    <input type="text" name="seat" required pattern="[A-F] [1-9]\d?">
-    <label>Price:</label>
-    <input type="number" name="price" min="0">
-    <label>Flight:</label>
-    <input type="ObjectId" name="flight">
+<form id="add-ticket-form" action="/flights/<%= flight._id %>/tickets" method="POST">
+    <label><span class="details"><b>Seat (A1 thru F99):</b></span></label>
+    <input type="text" name="seat" required pattern="[A-F][1-9]\d?"><br><br>
+    <label><span class="details"><b>Price: $</b></span></label>
+    <input type="number" name="price" min="0"><br><br>
     <input type="submit" value="Add Ticket">
   </form>
 </body>

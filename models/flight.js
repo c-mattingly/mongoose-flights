@@ -21,7 +21,6 @@ const flightSchema = new mongoose.Schema({
         }
     },
     destinations: [destinationSchema],
-    tickets: [{type: Schema.Types.ObjectId, ref: 'Ticket'}],
 }, {
     timestamps: true
 });
